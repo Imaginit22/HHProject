@@ -137,7 +137,19 @@ const events = () => {
     return(
         <div>
             <Head title={'about'}/>
-            This is text
+            <html>
+                <head>
+                    <title>Advanced Markers with HTML</title>
+
+                    <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
+
+                    <link rel="stylesheet" type="text/css" href="./style.css" />
+                    <script type="module" src="./GM.js"></script>
+                </head>
+                <body>
+                    <div id="map"></div>
+                </body>
+            </html>
         </div>
     );
 }
