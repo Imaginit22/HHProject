@@ -31,8 +31,8 @@ const Szhead = ({ title }) => {
                 <title>{title}</title>
                 <link rel="stylesheet" href="../css/styles.css"/>
             </Head>
-            <nav>
-                <div className="leftMenu">
+            <nav className='nav-top'>
+                <div>
                     {links.map(link => (
                         <a key={link.href} href={link.href} style={{paddingLeft:'10px'}}>{link.text}</a>
                     ))}
