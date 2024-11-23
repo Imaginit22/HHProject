@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Head from '../components/Szhead';
 const BoilerplatePage = () => {   
     //global variables are called hooks, useState for good things.
