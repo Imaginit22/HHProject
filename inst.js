@@ -44,7 +44,7 @@ await pool.query(`
         memberid INTEGER,
         organizationid INTEGER,
         UNIQUE (memberid, organizationid),
-        FOREIGN KEY(memberid) REFERENCES hosts(userid)
+        FOREIGN KEY(memberid) REFERENCES hosts(hostid)
     );
 
 
