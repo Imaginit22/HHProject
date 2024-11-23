@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import Szhead from '../components/Szhead';
+import Head from '../components/Head';
 
 const LoginPage = () => {
     useEffect(() => {
@@ -50,7 +50,7 @@ const LoginPage = () => {
     }, [])
     return(
         <div>
-            <Szhead title={'about'}/>
+            <Head title={'about'}/>
             <h1 className='centered'>Sign-Up/Login</h1>
             <div class="form-overall">
                 <div className="form-items">
