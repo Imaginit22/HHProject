@@ -4,4 +4,7 @@ hosts - accounts that can create events
 
 events - the events themselves
 
-memberships - link users to events
+memberships - link users to events. 
+Permissions range from:
+0 - owner
+1 - member

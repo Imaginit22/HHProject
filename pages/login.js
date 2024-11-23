@@ -10,7 +10,7 @@ const signup = () => {
         const password = document.getElementById("password");
         console.log(email.value.toLowerCase())
         
-        button.addEventListener('click', (event) => {
+        button.addEventListener('click',async (event) => {
             const wholeShebang = {
                 email: email.value,
                 password: password.value
@@ -35,10 +35,13 @@ const signup = () => {
                     emailError.textContent = errorData.message;
                     });
                 } else {
-                    console.log("YES", email.value.toLowerCase())
-                    window.localStorage.setItem('email', email.value.toLowerCase());
-                    window.localStorage.setItem('password', password.value);
-                    window.location.href = '/';
+                    res.json().then(body => {
+                        console.log("YES", email.value.toLowerCase(), body)
+                        window.localStorage.setItem('email', email.value.toLowerCase());
+                        window.localStorage.setItem('username', body.username)
+                        window.localStorage.setItem('password', password.value);
+                        window.location.href = '/';
+                    })
                 }
             })
             .catch(error => {

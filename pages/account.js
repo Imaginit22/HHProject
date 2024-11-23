@@ -4,7 +4,7 @@ const AccountPage = () => {
     useEffect(() => {
         const logOut = document.getElementById("logOut");
         logOut.addEventListener('click', () => {
-            localStorage.removeItem('email');
+            localStorage.removeItem('username');
             window.location.reload();
             window.location.href = '/';
         })

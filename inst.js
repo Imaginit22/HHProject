@@ -25,31 +25,30 @@ await pool.query(`
         password TEXT
     );
 
-    CREATE TABLE IF NOT EXISTS hosts (
-        hostid INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY, 
-        hostName TEXT UNIQUE,
-        email TEXT, 
-        password TEXT
+    CREATE TABLE IF NOT EXISTS orgs (
+        orgid INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY, 
+        orgname TEXT UNIQUE,
+        ownerid INTEGER,
+        FOREIGN KEY(ownerid) REFERENCES users(userid) ON DELETE CASCADE
     );
     
     CREATE TABLE IF NOT EXISTS events (
         eventid INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY, 
         hostid INTEGER, 
         whenmade TIMESTAMP, 
-        FOREIGN KEY(hostid) REFERENCES hosts(hostid) ON DELETE CASCADE
+        latitude float8,
+        longitude float8,
+        FOREIGN KEY(hostid) REFERENCES orgs(orgid) ON DELETE CASCADE
     );
 
     CREATE TABLE IF NOT EXISTS memberships (
         membershipid INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
         memberid INTEGER,
         organizationid INTEGER,
+        permissions INTEGER,
         UNIQUE (memberid, organizationid),
-        FOREIGN KEY(memberid) REFERENCES hosts(hostid)
+        FOREIGN KEY(memberid) REFERENCES orgs(orgid)
     );
-
-
-
-
 `
 
 
