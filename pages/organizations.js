@@ -30,8 +30,14 @@ const OrganizationPage = () => {
             Organizations
             <br></br>
             <a href='/createOrg'>
+                Join Organization
+            </a>
+            <a href='/createOrg'>
                 Create Organization
             </a>
+            <div>
+                
+            </div>
         </div>
     );
 }
