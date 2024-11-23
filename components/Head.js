@@ -32,7 +32,7 @@ const Szhead = ({ title }) => {
                 <link rel="stylesheet" href="../css/styles.css"/>
             </Head>
             <nav>
-                <div id="leftMenu">
+                <div className="leftMenu">
                     {links.map(link => (
                         <a key={link.href} href={link.href} style={{paddingLeft:'10px'}}>{link.text}</a>
                     ))}
