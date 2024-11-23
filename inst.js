@@ -45,6 +45,7 @@ await pool.query(`
         membershipid INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
         memberid INTEGER,
         organizationid INTEGER,
+        permissions INTEGER,
         UNIQUE (memberid, organizationid),
         FOREIGN KEY(memberid) REFERENCES orgs(orgid)
     );

@@ -9,14 +9,16 @@ const CreateorgPage = () => {
     //code goes here for on-run things
     useEffect(() => {
         const button = document.getElementById("submitButton")
-        console.log("This is print in usefeccted")
+        const email = localStorage.getItem("email")
+        const password = localStorage.getItem("password")
+        const orgname = document.getElementById("email")
         button.addEventListener('click', (event) => {
-            const wholeShebang = {
-                email: email.value,
-            }
-            email.innerText = 'dfsaksdjs'
             let errors = "";
-            console.log("beeooop")
+            const wholeShebang = {
+                email: email,
+                password: password,
+                orgname: orgname.value
+            }
             const jsonData = JSON.stringify(wholeShebang)
             const options = {
                 method: 'POST', // Specify the request method (PUT for updating data)
@@ -25,7 +27,7 @@ const CreateorgPage = () => {
                 },
                 body: jsonData
             };
-            fetch('/creatOrg', options)
+            fetch('/createOrg', options)
             .then(res => {
                 if (!res.ok) {
                     console.log("NO")
