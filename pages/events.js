@@ -13,9 +13,7 @@ const events = () => {
     return(
         <div>
             <Head title={'about'}/>
-            <body>
-            <p align="center"><iframe src ="../public/GMTesting.html" width="1000" height="750"></iframe></p>
-            </body>
+            <div align="center"><iframe src ="../thomas.html" width="1000" height="750"></iframe></div>
         </div>
     );
 }
