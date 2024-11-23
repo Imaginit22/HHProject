@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import Head from '../components/Head';
 
-const LoginPage = () => {
+const userLogin = () => {
     useEffect(() => {
         const emailError = document.getElementById("emailError")
         const emailLabel = document.getElementById("emailLabel")
@@ -28,7 +28,7 @@ const LoginPage = () => {
                 },
                 body: jsonData
             };
-            fetch('/submit-email-password', options)
+            fetch('/userSignup', options)
             .then(res => {
                 if (!res.ok) {
                     console.log("NO")
@@ -48,6 +48,9 @@ const LoginPage = () => {
             });            
         });
     }, [])
+
+
+
     return(
         <div>
             <Head title={'about'}/>
@@ -67,4 +70,4 @@ const LoginPage = () => {
         </div>
     );
 }
-export default LoginPage
+export default userLogin

@@ -44,26 +44,24 @@ await pool.query(`
         memberid INTEGER,
         organizationid INTEGER,
         UNIQUE (memberid, organizationid),
-        FOREIGN KEY(memberid) REFERENCES hosts(userid)
+        FOREIGN KEY(memberid) REFERENCES hosts(hostid)
     );
 
 
 
 
+`
 
 
+
+/*
+`
     CREATE TABLE IF NOT EXISTS sessions (
         userid INTEGER,
         ip INET, 
         FOREIGN KEY(userid) REFERENCES users(userid) ON DELETE CASCADE,
         UNIQUE(userid)
     );
-
-
-
-
-
-
     CREATE OR REPLACE FUNCTION increment_invite_count()
         RETURNS TRIGGER AS $iic$
         BEGIN
@@ -91,7 +89,7 @@ await pool.query(`
     CREATE TRIGGER decrement 
         AFTER DELETE ON invites FOR EACH ROW
         EXECUTE FUNCTION decrement_invite_count();
-  `
+  `*/
   )
     console.log('MADETABLES')
   }

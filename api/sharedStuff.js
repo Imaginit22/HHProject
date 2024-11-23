@@ -68,48 +68,7 @@ async function checkPword(userid, password, correctPassword = false) {
         return false
     }
 }
-function updateIP(email, ip) {
-    pool.query(`
-    UPDATE sessions
-    SET ip = $1
-    FROM users
-    WHERE users.userid = sessions.userid
-    AND users.email = $2`, [ip, email])
-}
-function createIP(email, ip) {
-    pool.query(`
-    INSERT INTO sessions (userid, ip)
-    SELECT userid, $1
-    FROM users
-    WHERE users.email = $2`, [ip, email])
-}
-async function forceGrab(id, idBool = false) {
-    if (idBool) {
-        poke(id, {p: 'y'})
-    } else {
-        const rowsIp = await pool.query(`
-        SELECT sessions.ip 
-        FROM sessions
-        JOIN users
-        ON users.userid = sessions.sessionuserid
-        WHERE users.email = $1
-        `, [id])
-        ip = usId.rows[0].ip
-        poke(ip, {p: 'y'})
-    }
-}
-function poke(ip, message) {
-    fetch(ip, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(message)
-    })
-}
 module.exports = {
-    Game,
-    sortHands,
     express,
     bodyParser,
     next,
@@ -117,11 +76,5 @@ module.exports = {
     fs,
     pool,
     exp,
-    splitStrings,
-    checkPword,
-    signin,
-    updateIP,
-    createIP,
-    poke,
-    forceGrab
+    checkPword
 }
