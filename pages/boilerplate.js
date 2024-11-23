@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Szhead from '../components/Szhead';
 const BoilerplatePage = () => {   
     //global variables are called hooks, useState for good things.
