@@ -38,10 +38,6 @@ function buildContent(property) {
 
   content.classList.add("property");
   content.innerHTML = `
-    <div class="icon">
-        <i aria-hidden="true" class="fa fa-icon fa-${property.type}" title="${property.type}"></i>
-        <span class="fa-sr-only">${property.type}</span>
-    </div>
     <div class="details">
         <div class="name">${property.name}</div>
         <div class="address">${property.address}</div>
@@ -56,9 +52,6 @@ const properties = [
     description: "DESCRIPTION",
     name: "HammyHackz",
     type: "building",
-    bed: 4,
-    bath: 4,
-    size: 800,
     position: {
       lat: 43.2567,
       lng: -79.8911,
@@ -69,9 +62,6 @@ const properties = [
     description: "A lovely store on busy road",
     name: "$ 4,225,000",
     type: "building",
-    bed: 2,
-    bath: 1,
-    size: 210,
     position: {
       lat: 43.2557,
       lng: -79.8711,
@@ -82,12 +72,9 @@ const properties = [
     description: "Single family house near golf club",
     name: "$ 1,700,000",
     type: "building",
-    bed: 4,
-    bath: 3,
-    size: 200,
     position: {
-      lat: 43.255702,
-      lng: -79.8711,
+      lat: 43.225702,
+      lng: -79.8011,
     },
   },
   {
@@ -95,12 +82,9 @@ const properties = [
     description: "Multifloor large warehouse",
     name: "$ 5,000,000",
     type: "building",
-    bed: 5,
-    bath: 4,
-    size: 700,
     position: {
-      lat: 43.255601,
-      lng: -79.8711,
+      lat: 43.295601,
+      lng: -79.8911,
     },
   }
 ];

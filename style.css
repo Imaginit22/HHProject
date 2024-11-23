@@ -1,10 +1,3 @@
-:root {
-    --building-color: #ff0000;
-  }
-  
-  /*
-   * Optional: Makes the sample page fill the window.
-   */
   html,
   body {
     height: 100%;
@@ -12,21 +5,14 @@
     padding: 0;
   }
   
-  /*
-   * Always set the map height explicitly to define the size of the div element
-   * that contains the map.
-   */
   #map {
     height: 100%;
     width: 100%;
   }
   
-  /*
-   * Property styles in unhighlighted state.
-   */
   .property {
     align-items: center;
-    background-color: #FFFFFF;
+    background-color: #ff0000;
     border-radius: 50%;
     color: #263238;
     display: flex;
@@ -44,7 +30,7 @@
   .property::after {
     border-left: 9px solid transparent;
     border-right: 9px solid transparent;
-    border-top: 9px solid #FFFFFF;
+    border-top: 9px solid #ff0000;
     content: "";
     height: 0;
     left: 50%;
@@ -54,18 +40,6 @@
     transition: all 0.3s ease-out;
     width: 0;
     z-index: 1;
-  }
-  
-  .property .icon {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    color: #FFFFFF;
-  }
-  
-  .property .icon svg {
-    height: 20px;
-    width: auto;
   }
   
   .property .details {
@@ -81,9 +55,6 @@
     margin-top: 5px;
   }
   
-  /*
-   * Property styles in highlighted state.
-   */
   .property.highlight {
     background-color: #FFFFFF;
     border-radius: 8px;
@@ -106,9 +77,6 @@
     height: 50px;
   }
   
-  /*
-   * Building icon colors.
-   */
   .property.highlight:has(.fa-building) .icon {
     color: var(--building-color);
   }
