@@ -18,8 +18,8 @@ server.use(bodyParser.urlencoded({extended: true}))
 app.prepare().then( async() => {
     const ignore = ['sharedStuff.js']
     let endpoints = []
-    const readdir = async () => {
-        const files = await fs.readdir('api') 
+    const readdir = async (dir) => {
+        const files = await fs.readdir(dir) 
         //console.log(files)
         for (let i = 0; i < files.length; i++) {
                 if (!ignore.includes(files[i])) {
@@ -28,7 +28,7 @@ app.prepare().then( async() => {
                 }
         }
     }
-    await readdir()
+    await readdir('api')
     for (let i = 0; i < endpoints.length; i++) {
         const callFunc = require(`./api/${endpoints[i]}`)
         server.post(`/${endpoints[i]}`, express.json(), callFunc) 
