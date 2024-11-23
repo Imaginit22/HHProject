@@ -14,13 +14,12 @@ const HomePage = () => {
     return (
         <div>
             <Head title="Home" />
-            <h1 className='top'>Home Page</h1>
             <header>
                 <a className="navbar-centered" id="imgLink" href="/howplay">
                     <img src="images/svg/JS.svg" id="AceHearts"  alt="JS Icon" />
                 </a>
                 <div className="top">
-                    <h1 className="top">Play Klawerjas!</h1>
+                    <h1 className="centerText">NDM</h1>
                 </div>
             </header>
         </div>
