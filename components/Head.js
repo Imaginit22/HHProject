@@ -6,20 +6,21 @@ const Szhead = ({ title }) => {
     const [links, setLinks] = useState([]);
     const [email, setEmail] = useState([]);
     useEffect(() => {
-        setEmail(localStorage.getItem('email'))
+        setEmail(localStorage.getItem('username'))
         const newLinks = [
             { href: "/", text: "Home" },
-            { href: "/about", text: "About" },
-            { href: "/howplay", text: "How to Play" }
+            { href: "/events", text: "Events" },
+            { href: "/organizations", text: "Organizations" }
         ];
-        if (localStorage.getItem('email') != null) {
+        /*if (localStorage.getItem('email') != null) {
             setLinks([
                 ...newLinks,
                 { href: "/invite", text: "Invites/Games" }
             ]);
         } else {
             setLinks(newLinks);
-        }
+        }*/
+        setLinks(newLinks);
     }, []);
 
     return (
@@ -37,11 +38,23 @@ const Szhead = ({ title }) => {
                         <a key={link.href} href={link.href} style={{paddingLeft:'10px'}}>{link.text}</a>
                     ))}
                 </div>
+                {email 
+                ? 
                 <div className="right">
-                    <a id="signUp" href={email ? "/account" : "/login"}>
-                        {email ? email : "Sign up/Log in"}
+                    <a href='/account'>
+                        {email}
                     </a>
                 </div>
+                :
+                <div className="right">
+                    <a id="signUp" href={email ? "/account" : "/signup"}>
+                        {email ? email : "Sign up"}
+                    </a>
+                    <a id="signUp" href={email ? "/account" : "/login"}>
+                        {email ? email : "Log in"}
+                    </a>
+                </div>}
+                
             </nav>
         </>
     );

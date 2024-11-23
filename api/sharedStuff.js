@@ -58,7 +58,9 @@ const pool = new Pool({
     }
 }
 const pool = new Pool()*/
-async function checkPword(userid, password, correctPassword = false) {
+async function checkPword(username, password, correctPassword = false) {
+    const useridRows = await pool.query("SELECT userid FROM users WHERE username = $1", [username])
+    const userid = useridRows.rows[0].userid
     if (correctPassword != false) {
         correctPassword = await pool.query('SELECT password FROM users WHERE userid = $1', [userid])
     }

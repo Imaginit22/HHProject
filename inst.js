@@ -20,9 +20,9 @@ async function makeTables() {
 await pool.query(`
     CREATE TABLE IF NOT EXISTS users (
         userid INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY, 
-        email TEXT UNIQUE, 
-        password TEXT,
-        organization TEXT
+        username TEXT UNIQUE, 
+        email TEXT UNIQUE,
+        password TEXT
     );
 
     CREATE TABLE IF NOT EXISTS hosts (
@@ -50,20 +50,18 @@ await pool.query(`
 
 
 
+`
 
 
+
+/*
+`
     CREATE TABLE IF NOT EXISTS sessions (
         userid INTEGER,
         ip INET, 
         FOREIGN KEY(userid) REFERENCES users(userid) ON DELETE CASCADE,
         UNIQUE(userid)
     );
-
-
-
-
-
-
     CREATE OR REPLACE FUNCTION increment_invite_count()
         RETURNS TRIGGER AS $iic$
         BEGIN
@@ -91,7 +89,7 @@ await pool.query(`
     CREATE TRIGGER decrement 
         AFTER DELETE ON invites FOR EACH ROW
         EXECUTE FUNCTION decrement_invite_count();
-  `
+  `*/
   )
     console.log('MADETABLES')
   }

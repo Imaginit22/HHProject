@@ -2,7 +2,9 @@
     text-align: center;
 }
 .right {
+    display: flex;
     margin-left: auto;
+    gap: 10px;
 }
 .nav-top {
     display: flex;

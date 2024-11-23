@@ -7,24 +7,41 @@
                 color:rgb(11, 48, 181);
                 font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
                 font-size: 60px;
+                text-align: center;
             }
             p{
                 font-family:'Times New Roman', Times, serif;
                 font-size: 25px;
+                text-align: center;
+            }
+            button{
+                background-color: #78c4d3; /* Green */
+                border: none;
+                color: rgb(226, 12, 12);
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                font-variant: small-caps;
             }
         </style>
     </head>
-    <body>
-       <h1> Name Doesn't Matter</h1>
-       <p> The first interactive map of all events in the Hamilton Region</p>
+    <body style="background-color: powderblue;">
+        
+        <h1> Name Doesn't Matter</h1>
+        <p> The first interactive map of all events in the Hamilton Region.</p>
+        <p> Create an account to share your events, or scroll down to explore available events.</p>
+        <a href = "pages/signup.js"></a>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br><br>
+        <label for="password">Password:</label>
+        <input type="text" id="password" name="password"><br><br>
+        <button onclick="document.location='pages/signup.js'">Sign Up</button>
 
-       <button>Sign Up</button>
-
-       <script>
-        function Create(){
-\
-        }
-       </script>
+        <div>
+            <p align="center"><iframe src ="thomas.html" width="1000" height="750"></iframe></p>
+        </div>
        
     </body>
 </html>

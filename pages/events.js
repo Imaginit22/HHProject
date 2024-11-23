@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Head from '../components/Head';
-const BoilerplatePage = () => {   
+const events = () => {   
     //global variables are called hooks, useState for good things.
     const [hook, setHook] = useState([]); 
 
@@ -31,4 +31,4 @@ const BoilerplatePage = () => {
         </div>
     );
 }
-export default BoilerplatePage
+export default events
