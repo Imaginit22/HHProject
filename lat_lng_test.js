@@ -1,0 +1,1 @@
+console.log(fetch("https://maps.googleapis.com/maps/api/geocode/json?address=L9H5P8&key=AIzaSyB4eyRm1PjgPEqRa7vF3h8T91E_MLa1R74"))
