@@ -20,9 +20,9 @@ async function makeTables() {
 await pool.query(`
     CREATE TABLE IF NOT EXISTS users (
         userid INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY, 
-        email TEXT UNIQUE, 
-        password TEXT,
-        organization TEXT
+        username TEXT UNIQUE, 
+        email TEXT UNIQUE,
+        password TEXT
     );
 
     CREATE TABLE IF NOT EXISTS hosts (

@@ -9,17 +9,18 @@ const Szhead = ({ title }) => {
         setEmail(localStorage.getItem('email'))
         const newLinks = [
             { href: "/", text: "Home" },
-            { href: "/about", text: "About" },
-            { href: "/howplay", text: "How to Play" }
+            { href: "/events", text: "Events" },
+            { href: "/organizations", text: "Organizations" }
         ];
-        if (localStorage.getItem('email') != null) {
+        /*if (localStorage.getItem('email') != null) {
             setLinks([
                 ...newLinks,
                 { href: "/invite", text: "Invites/Games" }
             ]);
         } else {
             setLinks(newLinks);
-        }
+        }*/
+        setLinks(newLinks);
     }, []);
 
     return (
@@ -37,11 +38,18 @@ const Szhead = ({ title }) => {
                         <a key={link.href} href={link.href} style={{paddingLeft:'10px'}}>{link.text}</a>
                     ))}
                 </div>
+                {email 
+                ? 
+                email : 
                 <div className="right">
-                    <a id="signUp" href={email ? "/account" : "/login"}>
-                        {email ? email : "Sign up/Log in"}
+                    <a id="signUp" href={email ? "/account" : "/signup"}>
+                        {email ? email : "Sign up"}
                     </a>
-                </div>
+                    <a id="signUp" href={email ? "/account" : "/signup"}>
+                        {email ? email : "Log in"}
+                    </a>
+                </div>}
+                
             </nav>
         </>
     );

@@ -1,20 +1,20 @@
 import { useEffect } from 'react';
 import Head from '../components/Head';
 
-const userLogin = () => {
+const signup = () => {
     useEffect(() => {
         const emailError = document.getElementById("emailError")
         const emailLabel = document.getElementById("emailLabel")
         const button = document.getElementById("submitButton")
         const email = document.getElementById("email");
-        //const username = document.getElementById("username");
+        const username = document.getElementById("username");
         const password = document.getElementById("password");
         console.log(email.value.toLowerCase())
         
         button.addEventListener('click', (event) => {
             const wholeShebang = {
                 email: email.value,
-                //username: username.value,
+                username: username.value,
                 password: password.value
             }
             email.innerText = 'dfsaksdjs'
@@ -38,6 +38,7 @@ const userLogin = () => {
                     });
                 } else {
                     console.log("YES", email.value.toLowerCase())
+                    window.localStorage.setItem('username', username.value)
                     window.localStorage.setItem('email', email.value.toLowerCase());
                     window.localStorage.setItem('password', password.value);
                     window.location.href = '/';
@@ -57,8 +58,12 @@ const userLogin = () => {
             <h1 className='centered'>Sign-Up/Login</h1>
             <div class="form-overall">
                 <div className="form-items">
-                    <label for="email" id="emailLabel">Username:</label>
-                    <input type="email" id="email" name="email" placeholder="Username" required/>
+                    <label for="username">Username:</label>
+                    <input type="username" id="username" name="username" placeholder="Username" required/>
+                </div>
+                <div className="form-items">
+                    <label for="email" id="emailLabel">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Email@example.net" required/>
                 </div>
                 <div className="form-items">
                     <label for="password">Password:</label>
@@ -70,4 +75,4 @@ const userLogin = () => {
         </div>
     );
 }
-export default userLogin
+export default signup
