@@ -4,23 +4,42 @@ const CreateorgPage = () => {
     //global variables are called hooks, useState for good things.
     const [hook, setHook] = useState([]); 
 
-    //how to make a function. async allows functions that normally
-    //run asynchronously to be waited for, using await.
-    const func = (async (body, endpoint) => {
-        const options = {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify({'whee': param})
-        }
-        await fetch(`/${endpoint}`, options)
-        print(yaya)
-    })
+
 
     //code goes here for on-run things
     useEffect(() => {
+        const button = document.getElementById("submitButton")
         console.log("This is print in usefeccted")
+        button.addEventListener('click', (event) => {
+            const wholeShebang = {
+                email: email.value,
+            }
+            email.innerText = 'dfsaksdjs'
+            let errors = "";
+            console.log("beeooop")
+            const jsonData = JSON.stringify(wholeShebang)
+            const options = {
+                method: 'POST', // Specify the request method (PUT for updating data)
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: jsonData
+            };
+            fetch('/creatOrg', options)
+            .then(res => {
+                if (!res.ok) {
+                    console.log("NO")
+                    return res.json().then(errorData => {
+                    emailError.textContent = errorData.message;
+                    });
+                } else {
+                    console.log("YES", email.value.toLowerCase())
+                }
+            })
+            .catch(error => {
+                console.error("Network error or unexpected error:", error);
+            });            
+        });
     }, []);
 
     //html goes here
@@ -30,10 +49,10 @@ const CreateorgPage = () => {
             <div class="form-overall">
                 <div className="form-items">
                     <label for="email" id="emailLabel">Organization Name:</label>
-                    <input type="email" id="email" name="email" placeholder="Username or Email" required/>
+                    <input type="email" id="email" name="email" placeholder="Org Name" required/>
                 </div>
                 <label id="emailError"></label>
-                <button type="submit" className = "submit-button" name="submitButton" id="submitButton" value="Submit">Log in</button>
+                <button type="submit" className = "submit-button" name="submitButton" id="submitButton" value="Submit">Create Organization</button>
             </div>
         </div>
     );

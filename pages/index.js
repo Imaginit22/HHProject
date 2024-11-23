@@ -16,7 +16,7 @@ const HomePage = () => {
             <Head title="Home" />
             <header>
                 <div className="top">
-                    <h1 className="centerText">NDM</h1>
+                    <h1 className="centerText">NDM WHEEE</h1>
                 </div>
             </header>
         </div>

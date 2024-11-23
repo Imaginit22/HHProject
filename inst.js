@@ -27,7 +27,9 @@ await pool.query(`
 
     CREATE TABLE IF NOT EXISTS orgs (
         orgid INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY, 
-        orgname TEXT UNIQUE
+        orgname TEXT UNIQUE,
+        ownerid INTEGER,
+        FOREIGN KEY(ownerid) REFERENCES users(userid) ON DELETE CASCADE
     );
     
     CREATE TABLE IF NOT EXISTS events (
@@ -46,10 +48,6 @@ await pool.query(`
         UNIQUE (memberid, organizationid),
         FOREIGN KEY(memberid) REFERENCES orgs(orgid)
     );
-
-
-
-
 `
 
 
