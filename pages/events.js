@@ -131,7 +131,7 @@ const events = () => {
 
                     <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
 
-                    <link rel="stylesheet" type="text/css" href="./style.css" />
+                    <link rel="stylesheet" type="text/css" href="./styles.css" />
                     <script type="module" src="./GM.js"></script>
                 </head>
                 <body>
