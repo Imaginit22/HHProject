@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
-import Head from '../components/Szhead';
-const AccountPage = () => {   
+import { useEffect, useState } from 'react';
+import Head from '../components/Head';
+const Account = () => {   
     //global variables are called hooks, useState for good things.
     const [hook, setHook] = useState([]); 
 
@@ -31,4 +31,4 @@ const AccountPage = () => {
         </div>
     );
 }
-export default AccountPage
+export default Account
