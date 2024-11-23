@@ -34,4 +34,4 @@ const vendorSignup = async (req, res) => {
       console.log(error)
     }
 }
-module.exports = submit_email_password
+module.exports = vendorSignup

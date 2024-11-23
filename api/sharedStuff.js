@@ -5,6 +5,9 @@ const path = require('path');
 const fs = require('fs/promises');
 const server = express();
 
+require('dotenv').config()
+console.log(process.env)
+
 const { Pool } = require('pg');
 const exp = require('constants');
 //TODO SERVER FROM SERVER THEN WE GET REAL PARSING YAY
@@ -55,6 +58,16 @@ const pool = new Pool({
     }
 }
 const pool = new Pool()*/
+async function checkPword(userid, password, correctPassword = false) {
+    if (correctPassword != false) {
+        correctPassword = await pool.query('SELECT password FROM users WHERE userid = $1', [userid])
+    }
+    if (correctPassword == password) {
+        return true
+    } else {
+        return false
+    }
+}
 function updateIP(email, ip) {
     pool.query(`
     UPDATE sessions
