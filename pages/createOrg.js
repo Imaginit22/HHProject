@@ -25,19 +25,15 @@ const CreateorgPage = () => {
                 },
                 body: jsonData
             };
-            fetch('/userLogin', options)
+            fetch('/creatOrg', options)
             .then(res => {
                 if (!res.ok) {
                     console.log("NO")
                     return res.json().then(errorData => {
-                    //email.value = "";
                     emailError.textContent = errorData.message;
                     });
                 } else {
                     console.log("YES", email.value.toLowerCase())
-                    window.localStorage.setItem('email', email.value.toLowerCase());
-                    window.localStorage.setItem('password', password.value);
-                    window.location.href = '/';
                 }
             })
             .catch(error => {
