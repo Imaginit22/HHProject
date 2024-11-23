@@ -7,7 +7,6 @@ const signup = () => {
         const emailLabel = document.getElementById("emailLabel")
         const button = document.getElementById("submitButton")
         const email = document.getElementById("email");
-        const username = document.getElementById("username");
         const password = document.getElementById("password");
         console.log(email.value.toLowerCase())
         
@@ -37,7 +36,6 @@ const signup = () => {
                     });
                 } else {
                     console.log("YES", email.value.toLowerCase())
-                    window.localStorage.setItem('username', username.value)
                     window.localStorage.setItem('email', email.value.toLowerCase());
                     window.localStorage.setItem('password', password.value);
                     window.location.href = '/';
