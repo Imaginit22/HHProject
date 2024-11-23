@@ -48,29 +48,29 @@ function buildContent(property) {
 
 const properties = [
   {
-    address: "ADRESS",
-    description: "DESCRIPTION",
+    address: "1280 Main St W, Hamilton",
+    description: "VERY FUN(TRUST)",
     name: "HammyHackz",
     type: "building",
     position: {
-      lat: 43.2567,
-      lng: -79.8911,
+      lat: 43.2614,
+      lng: -79.9197 ,
     },
   },
   {
-    address: "98 Aleh Ave, Palo Alto, CA",
-    description: "A lovely store on busy road",
-    name: "$ 4,225,000",
+    address: "98 Aleh Ave, Palo Alto",
+    description: "great for dogs",
+    name: "Conga Lessons",
     type: "building",
     position: {
-      lat: 43.2557,
+      lat: 43.2057,
       lng: -79.8711,
     },
   },
   {
-    address: "2117 Su St, MountainView, CA",
-    description: "Single family house near golf club",
-    name: "$ 1,700,000",
+    address: "2117 Su St, MountainView",
+    description: "I like Cheese",
+    name: "Cheese eating",
     type: "building",
     position: {
       lat: 43.225702,
@@ -78,13 +78,13 @@ const properties = [
     },
   },
   {
-    address: "197 Alicia Dr, Santa Clara, CA",
-    description: "Multifloor large warehouse",
-    name: "$ 5,000,000",
+    address: "197 Alicia Dr, Santa Clara",
+    description: "I'm going to eat dinner",
+    name: "Hamilton City Marathon",
     type: "building",
     position: {
       lat: 43.295601,
-      lng: -79.8911,
+      lng: -79.7911,
     },
   }
 ];
