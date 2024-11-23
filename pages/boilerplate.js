@@ -23,6 +23,7 @@ const BoilerplatePage = () => {
         console.log("This is print in usefeccted")
     }, []);
 
+    //html goes here
     return(
         <div>
             <Szhead title={'about'}/>

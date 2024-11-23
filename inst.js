@@ -21,19 +21,18 @@ await pool.query(`
         organization TEXT
     );
 
-    CREATE TABLE IF NOT EXISTS vendors (
-        vendorid INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY, 
-        vendorName TEXT UNIQUE,
+    CREATE TABLE IF NOT EXISTS hosts (
+        hostid INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY, 
+        hostName TEXT UNIQUE,
         email TEXT, 
         password TEXT
     );
     
     CREATE TABLE IF NOT EXISTS events (
         eventid INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY, 
-        vendorid INTEGER, 
+        hostid INTEGER, 
         whenmade TIMESTAMP, 
-        FOREIGN KEY(vendorid) REFERENCES vendors(vendorid) ON DELETE CASCADE, 
-        FOREIGN KEY(recipientid) REFERENCES users(userid) ON DELETE CASCADE
+        FOREIGN KEY(hostid) REFERENCES hosts(hostid) ON DELETE CASCADE, 
     );
 
     CREATE TABLE IF NOT EXISTS organizations (
@@ -45,7 +44,7 @@ await pool.query(`
         memberid INTEGER,
         organizationid INTEGER,
         UNIQUE (memberid, organizationid),
-        
+        FOREIGN KEY(memberid) REFERENCES hosts(userid)
     );
 
 
