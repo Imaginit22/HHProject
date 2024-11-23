@@ -35,10 +35,6 @@ await pool.query(`
         FOREIGN KEY(hostid) REFERENCES hosts(hostid) ON DELETE CASCADE, 
     );
 
-    CREATE TABLE IF NOT EXISTS organizations (
-        orgid INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    );
-
     CREATE TABLE IF NOT EXISTS memberships (
         membershipid INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
         memberid INTEGER,

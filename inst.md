@@ -1,3 +1,7 @@
 users - accounts that can register for events
 
-hosts - 
+hosts - accounts that can create events
+
+events - the events themselves
+
+memberships - link users to events
