@@ -12,19 +12,30 @@
                 font-family:'Times New Roman', Times, serif;
                 font-size: 25px;
             }
+            button{
+                background-color: #78c4d3; /* Green */
+                border: none;
+                color: rgb(226, 12, 12);
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                font-variant: small-caps;
+            }
         </style>
     </head>
     <body>
-       <h1> Name Doesn't Matter</h1>
-       <p> The first interactive map of all events in the Hamilton Region</p>
+        
+        <h1> Name Doesn't Matter</h1>
+        <p> The first interactive map of all events in the Hamilton Region.</p>
+        <p> Create an account to share your events, or scroll down to explore available events.</p>
+        <a href = "pages/signup.js"></a>
+        <button onclick="document.location='pages/signup.js'">Sign Up</button>
 
-       <button>Sign Up</button>
-
-       <script>
-        function Create(){
-\
-        }
-       </script>
+        <div>
+            <iframe src="https://www.google.com/maps/d/embed?mid=1sNn7k_PlzkNDcxOHB7Ugq3Wg8b8c0hU&ehbc=2E312F&noprof=1" width="1000" height="750"></iframe>
+        </div>
        
     </body>
 </html>
