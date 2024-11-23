@@ -6,7 +6,7 @@ const Szhead = ({ title }) => {
     const [links, setLinks] = useState([]);
     const [email, setEmail] = useState([]);
     useEffect(() => {
-        setEmail(localStorage.getItem('email'))
+        setEmail(localStorage.getItem('username'))
         const newLinks = [
             { href: "/", text: "Home" },
             { href: "/events", text: "Events" },
@@ -40,7 +40,12 @@ const Szhead = ({ title }) => {
                 </div>
                 {email 
                 ? 
-                email : 
+                <div className="right">
+                    <a href='/account'>
+                        {email}
+                    </a>
+                </div>
+                :
                 <div className="right">
                     <a id="signUp" href={email ? "/account" : "/signup"}>
                         {email ? email : "Sign up"}
