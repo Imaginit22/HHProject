@@ -1,5 +1,6 @@
 const { Pool } = require('pg');
 
+console.log("YAHOO")
 //!USE ENVIRONMENT VARIABLES
 const pool = new Pool({
     database: 'hhproject',
@@ -11,6 +12,9 @@ const pool = new Pool({
     connectionTimeoutMillis: 600,
 })
 
+const dotenv = require('dotenv');
+dotenv.config();
+console.log(`Your port is ${process.env.PORT}`); // 8626
 
 async function makeTables() {
 await pool.query(`
@@ -32,11 +36,7 @@ await pool.query(`
         eventid INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY, 
         hostid INTEGER, 
         whenmade TIMESTAMP, 
-        FOREIGN KEY(hostid) REFERENCES hosts(hostid) ON DELETE CASCADE, 
-    );
-
-    CREATE TABLE IF NOT EXISTS organizations (
-        orgid INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+        FOREIGN KEY(hostid) REFERENCES hosts(hostid) ON DELETE CASCADE
     );
 
     CREATE TABLE IF NOT EXISTS memberships (
@@ -44,7 +44,7 @@ await pool.query(`
         memberid INTEGER,
         organizationid INTEGER,
         UNIQUE (memberid, organizationid),
-        FOREIGN KEY(memberid) REFERENCES hosts(userid)
+        FOREIGN KEY(memberid) REFERENCES hosts(hostid)
     );
 
 
