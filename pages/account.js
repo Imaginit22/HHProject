@@ -1,34 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Head from '../components/Head';
-const Account = () => {   
-    //global variables are called hooks, useState for good things.
-    const [hook, setHook] = useState([]); 
-
-    //how to make a function. async allows functions that normally
-    //run asynchronously to be waited for, using await.
-    const func = (async (param) => {
-        const options = {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify({'whee': param})
-        }
-        await fetch('/endpoint', options)
-        print(yaya)
-    })
-
-    //code goes here for on-run things
+const AccountPage = () => {
     useEffect(() => {
-        console.log("This is print in usefeccted")
-    }, []);
-
-    //html goes here
+        const logOut = document.getElementById("logOut");
+        logOut.addEventListener('click', () => {
+            localStorage.removeItem('email');
+            window.location.reload();
+            window.location.href = '/';
+        })
+    }, [])
     return(
         <div>
-            <Head title={'about'}/>
-            This is text
+            <Head title={'account'}/>
+            <button id = "logOut">Log Out</button>
         </div>
     );
 }
-export default Account
+export default AccountPage
