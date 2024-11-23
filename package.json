@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Imaginit22/HHProject#readme",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "next": "^15.0.3",
     "path": "^0.12.7",
