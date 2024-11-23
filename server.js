@@ -6,7 +6,7 @@ const fs = require('fs/promises');
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev });
 const server = express();
-const port = 3000;
+const port = 3001;
 const handle = app.getRequestHandler()
 
 const { Pool } = require('pg');
@@ -19,7 +19,7 @@ app.prepare().then( async() => {
     const ignore = ['sharedStuff.js']
     let endpoints = []
     const readdir = async () => {
-        const files = await fs.readdir('sapi') 
+        const files = await fs.readdir('api') 
         //console.log(files)
         for (let i = 0; i < files.length; i++) {
                 if (!ignore.includes(files[i])) {
