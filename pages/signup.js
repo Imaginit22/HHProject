@@ -55,7 +55,7 @@ const signup = () => {
     return(
         <div>
             <Head title={'about'}/>
-            <h1 className='centered'>Sign-Up/Login</h1>
+            <h1 className='centered'>Sign Up</h1>
             <div class="form-overall">
                 <div className="form-items">
                     <label for="username">Username:</label>
@@ -70,7 +70,7 @@ const signup = () => {
                     <input type="password" id="password" name="password" placeholder="Password" required/>
                 </div>
                 <label id="emailError"></label>
-                <button type="submit" className = "submit-button" name="submitButton" id="submitButton" value="Submit">Submit</button>
+                <button type="submit" className = "submit-button" name="submitButton" id="submitButton" value="Submit">Sign up</button>
             </div>
         </div>
     );

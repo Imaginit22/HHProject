@@ -45,7 +45,7 @@ const Szhead = ({ title }) => {
                     <a id="signUp" href={email ? "/account" : "/signup"}>
                         {email ? email : "Sign up"}
                     </a>
-                    <a id="signUp" href={email ? "/account" : "/signup"}>
+                    <a id="signUp" href={email ? "/account" : "/login"}>
                         {email ? email : "Log in"}
                     </a>
                 </div>}

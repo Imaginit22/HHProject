@@ -14,12 +14,11 @@ const signup = () => {
         button.addEventListener('click', (event) => {
             const wholeShebang = {
                 email: email.value,
-                username: username.value,
                 password: password.value
             }
             email.innerText = 'dfsaksdjs'
             let errors = "";
-            console.log("boeop")
+            console.log("beeooop")
             const jsonData = JSON.stringify(wholeShebang)
             const options = {
                 method: 'POST', // Specify the request method (PUT for updating data)
@@ -28,7 +27,7 @@ const signup = () => {
                 },
                 body: jsonData
             };
-            fetch('/userSignup', options)
+            fetch('/userLogin', options)
             .then(res => {
                 if (!res.ok) {
                     console.log("NO")
@@ -55,22 +54,18 @@ const signup = () => {
     return(
         <div>
             <Head title={'about'}/>
-            <h1 className='centered'>Sign-Up/Login</h1>
+            <h1 className='centered'>Login</h1>
             <div class="form-overall">
                 <div className="form-items">
-                    <label for="username">Username:</label>
-                    <input type="username" id="username" name="username" placeholder="Username" required/>
-                </div>
-                <div className="form-items">
-                    <label for="email" id="emailLabel">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Email@example.net" required/>
+                    <label for="email" id="emailLabel">Username/Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Username or Email" required/>
                 </div>
                 <div className="form-items">
                     <label for="password">Password:</label>
                     <input type="password" id="password" name="password" placeholder="Password" required/>
                 </div>
                 <label id="emailError"></label>
-                <button type="submit" className = "submit-button" name="submitButton" id="submitButton" value="Submit">Submit</button>
+                <button type="submit" className = "submit-button" name="submitButton" id="submitButton" value="Submit">Log in</button>
             </div>
         </div>
     );
