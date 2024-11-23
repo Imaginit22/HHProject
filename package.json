@@ -1,0 +1,24 @@
+{
+  "name": "hhproject",
+  "version": "1.0.0",
+  "description": "Our project for hammerhacks This was pushed by Noah",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Imaginit22/HHProject.git"
+  },
+  "author": "DVSS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Imaginit22/HHProject/issues"
+  },
+  "homepage": "https://github.com/Imaginit22/HHProject#readme",
+  "dependencies": {
+    "express": "^4.21.1",
+    "next": "^15.0.3",
+    "path": "^0.12.7"
+  }
+}
