@@ -29,7 +29,7 @@ const pool = new Pool({
     database: 'hhproject',
     host: 'localhost',
     user: 'postgres',
-    password: 'POST',
+    password: process.env.password,
     max: 20,
     idleTimeoutMillis: 10000,
     connectionTimeoutMillis: 600,

@@ -1,12 +1,13 @@
 const { Pool } = require('pg');
-
+require('dotenv').config()
+console.log(process.env)
 console.log("YAHOO")
 //!USE ENVIRONMENT VARIABLES
 const pool = new Pool({
     database: 'hhproject',
     host: 'localhost',
     user: 'postgres',
-    password: 'POST',
+    password: process.env.password,
     max: 20,
     idleTimeoutMillis: 10000,
     connectionTimeoutMillis: 600,
@@ -38,6 +39,9 @@ await pool.query(`
         whenmade TIMESTAMP, 
         latitude float8,
         longitude float8,
+        name TEXT,
+        description TEXT,
+        address TEXT,
         FOREIGN KEY(hostid) REFERENCES orgs(orgid) ON DELETE CASCADE
     );
 
@@ -49,6 +53,11 @@ await pool.query(`
         UNIQUE (memberid, organizationid),
         FOREIGN KEY(memberid) REFERENCES orgs(orgid)
     );
+
+    CREATE TABLE IF NOT EXISTS attendees (
+        attendeeid INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+        memberid
+    )
 `
 
 
